@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p th:insert="head_uzytkownik.html"></p>
+    <body>
+        <div id="wszystko">
+	        <p th:insert="gornyPanel_uzytkownik.html"></p>
+	        <p th:insert="lewyPanel_uzytkownik.html"></p>
+	        <div id="zawartosc">
+	        <h1>Wybierz plan:</h1>
+	        <form action="#" th:action="@{/wybierzPlan}" th:object="${p}" method="post">
+						 <table>
+							 <tr>
+							    <td class="none">Numer planu:</td>
+								<td class="none">
+									<select th:field="*{idPlanu}">
+										<option th:each="i: ${lp}" th:value="${i.idPlanu}" th:text="${i.idPlanu}"></option>
+									</select>
+								</td>
+							</tr>
+						 </table>
+						 <p align="center"><input type="submit" value="Wybierz!"/></p>
+ 					</form>
+			</div>
+	</div>      
+    </body>
+</html>

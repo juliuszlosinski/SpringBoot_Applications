@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p th:insert="head.html"></p>
+    <body>
+        <div id="wszystko">
+	        <p th:insert="gornyPanel.html"></p>
+	        <p th:insert="lewyPanel.html"></p>
+	        <div id="zawartosc">
+	                <h1>Lista użytkowników:</h1>
+			 <table>
+				<thead>
+					<tr>
+						<th>Login</th>
+						<th>Email</th>
+						<th>Hasło</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="u : ${lu}">
+						<td th:text="${u.iduzytkownika}"/>
+						<td th:text="${u.email}"/>
+						<td th:text="${u.haslo}"/>
+						<td>
+						<a th:href="@{'/usun_uzytkownika/'+${u.iduzytkownika}}">Usuń!</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+	</div>      
+    </body>
+</html>

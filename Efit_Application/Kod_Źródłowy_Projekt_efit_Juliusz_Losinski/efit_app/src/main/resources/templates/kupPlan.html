@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p th:insert="head_uzytkownik.html"></p>
+    <body>
+        <div id="wszystko">
+	        <p th:insert="gornyPanel_uzytkownik.html"></p>
+	        <p th:insert="lewyPanel_uzytkownik.html"></p>
+	        <div id="zawartosc">
+	                <h1>Kup planu:</h1>
+	                <form action="#" th:action="@{/zakupPlan}" th:object="${form}" method="post">
+			            <p>
+			            	<b>Ilość tygodni: </b> 
+				            <select th:field="*{iloscTygodni}">
+				                <option th:value="1">1</option>
+				                <option th:value="2">2</option>
+				                <option th:value="3">3</option>
+				                <option th:value="4">4</option>
+				                <option th:value="5">5</option>
+				                <option th:value="6">6</option>
+				                <option th:value="7">7</option>
+				            </select>
+			            </p>
+			            
+			            <p>
+			            	<b>Typ treningu: </b>
+				          	<select th:field="*{typTreningu}">
+				                <option th:value="FBW">FBW</option>
+				                <option th:value="Split">Split</option>
+				                <option th:value="Push-Pull">Push-Pull</option>
+				            </select>
+			            </p>
+			            
+			            <p>
+			            	<b>Cel treningu:</b>
+				            <select th:field="*{celTreningu}">
+				                <option th:value="spalanieKalorii">Spalanie kalorii</option>
+				                <option th:value="budowaMasy">Budowa masy</option>
+				            </select>
+			            </p>
+			            
+			            <p><b>Dni treningowe:</b></p>
+			            <p>Poniedziałek: <input type="checkbox" th:field="*{poniedzialek}"></p>
+			            <p>Wtorek: <input type="checkbox" th:field="*{wtorek}"></p>
+			            <p>Środa: <input type="checkbox" th:field="*{sroda}"></p>
+			            <p>Czwartek: <input type="checkbox" th:field="*{czwartek}"></p>
+			            <p>Piątek: <input type="checkbox" th:field="*{piatek}"></p>
+			            <p>Sobota: <input type="checkbox" th:field="*{sobota}"></p>
+			            <p>Niedziela: <input type="checkbox" th:field="*{niedziela}"></p>
+
+			                <p align="center"><input type="submit" value="Kup plan!"/></p>
+			            </form>
+			            
+			</div>
+	</div>      
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p th:insert="head.html"></p>
+    <body>
+        <div id="wszystko">
+	        <p th:insert="gornyPanel.html"></p>
+	        <p th:insert="lewyPanel.html"></p>
+	        <div id="zawartosc">
+	                <h1>Lista cwiczeń:</h1>
+			       <table>
+			<tbody>
+			<tr th:each="c : ${lc}">
+				<td>
+					<p th:text="${c.idcwiczenia}"/>
+					<p th:text="${c.opis}"/>
+					<p th:text="${c.idrodzajucwiczenia}"/>
+					<a th:href="@{'/usun_cwiczenie/'+${c.idcwiczenia}}">Usuń!</a>
+				</td>
+				
+				<td>
+				<iframe th:src="${c.film}"
+                    width="340px" height="300px" frameborder="0"
+                    ></iframe>
+				</td>
+				
+			</tr>
+		</tbody>
+	</table>   
+			</div>
+	</div>      
+    </body>
+</html>

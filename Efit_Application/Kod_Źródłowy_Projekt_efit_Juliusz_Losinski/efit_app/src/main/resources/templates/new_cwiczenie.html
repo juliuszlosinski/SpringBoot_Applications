@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p th:insert="head.html"></p>
+    <body>
+        <div id="wszystko">
+	        <p th:insert="gornyPanel.html"></p>
+	        <p th:insert="lewyPanel.html"></p>
+	        <div id="zawartosc">
+	                <h1>Dodaj cwiczenie:</h1>
+	                <br/>
+	                <form action="#" th:action="@{/save_cwiczenie}" th:object="${c}" method="post">
+						 <table>
+							 <tr>
+								 <td>Nazwa:</td>
+								 <td><input type="text" th:field="*{idcwiczenia}" th:required/></td>
+							 </tr>
+							 <tr>
+								 <td>Opis:</td>
+								 <td><input type="text" th:field="*{opis}" th:required/></td>
+							 </tr>
+							 <tr>
+							    <td>Rodzaj ćwiczenia:</td>
+								<td>
+									<select th:field="*{idrodzajucwiczenia}">
+										<option th:each="i: ${lr}" th:value="${i.idrodzajucwiczenia}" th:text="${i.idrodzajucwiczenia}"></option>
+									</select>
+								</td>
+							</tr>
+							 <tr>
+								 <td>Link do filmu:</td>
+								 <td><input type="text" th:field="*{film}" th:required/></td>
+							 </tr>
+						 </table>
+						 <button type="submit">Dodaj!</button>
+ 					</form>
+			</div>
+		</div>      
+    </body>
+</html>

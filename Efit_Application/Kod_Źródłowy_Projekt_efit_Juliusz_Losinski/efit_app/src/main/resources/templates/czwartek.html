@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p th:insert="head_uzytkownik.html"></p>
+    <body>
+        <div id="wszystko">
+	        <p th:insert="gornyPanel_uzytkownik.html"></p>
+	        <p th:insert="lewyPanel_uzytkownik.html"></p>
+	        <div id="zawartosc">
+	                <h1>Czwartek:</h1>
+	                <div th:if="${lc.empty}">
+	                <h2 align="center"><i>W tym dniu nie ćwiczysz!</i></h2>
+                    <img width="300px" height="300px" style="padding: 10px; margin-bottom:5px;" src="sleeping_guy.png"/>
+	                </div>
+			       <table>
+			<tbody class="cwiczenie">
+			<tr th:each="c : ${lc}">
+				<td>
+					<p><b>Nazwa: </b><p th:text="${c.idcwiczenia}"/></p>
+					<p><b>Opis: </b><p th:text="${c.opis}"/></p>
+					<p><b>Rodzaj: </b><p th:text="${c.idrodzajucwiczenia}"/></p>
+				</td>
+				<td>
+				<iframe th:src="${c.film}"
+                    width="340px" height="300px" frameborder="0"
+                    ></iframe>
+				</td>
+			</tr>
+		</tbody>
+	</table>   
+			</div>
+	</div>      
+    </body>
+</html>

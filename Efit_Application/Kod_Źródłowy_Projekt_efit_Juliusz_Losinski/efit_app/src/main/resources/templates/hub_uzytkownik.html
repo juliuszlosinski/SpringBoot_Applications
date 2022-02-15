@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p th:insert="head_uzytkownik.html"></p>
+    <body>
+        <div id="wszystko">
+	        <p th:insert="gornyPanel_uzytkownik.html"></p>
+	        <p th:insert="lewyPanel_uzytkownik.html"></p>
+	        <div id="zawartosc">
+	               <h1 th:text="'Witaj ' + ${session.idUzytkownika} + ' !'" th:unless="${session == null}">[...]</h1>
+	               <div id="opis">
+						<h3 align="center">Co oferuje Efit?</h3>
+	      			<table>
+                   <tr>
+                   <td style="border:none">
+						<ul class="list">
+							<li>Zakup planu,</li>
+							<li>Wybór planu,</li>
+							<li>Uzyskanie dokładnego opisu dnia.</li>
+							<li>Wsparcie developerów,</li>
+						</ul>
+						</td>
+						<td style="border:none">
+						<img src="user.png" width="200px" height="200px"/>
+						</td>
+						</tr>
+                   </table>
+					</div>
+			</div>
+	</div>      
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<nav>
+    <div id="lewyPanel">
+	  <div id="plan">
+	    <table>
+	        <tr>
+	            <td><a href="/hub_uzytkownik">Strona startowa</a></td>
+	        </tr>
+	        <tr>
+	        	<td class="none"><span class="tytul" th:text="'Obecnie zalogowany: ' + ${session.idUzytkownika}" th:unless="${session == null}">[...]</span></td>
+	        </tr>
+	        <tr>
+	            <td><a class="tytul">Plan:</a></td>
+	        </tr>
+	        <tr>
+	            <td class="special"><span th:text="'Obecny plan: ' + ${session.idPlanu}" th:unless="${session == null}">[...]</span></td>
+	        </tr>
+	        <tr>
+	            <td><a href="/wybierzPlan">Wybierz</a></td>
+	        </tr>
+	        <tr>
+	            <td><a href="/kupPlan">Kup</a></td>
+	        </tr>
+	        <tr>
+	            <td><a href="/wyloguj">Wyloguj</a></td>
+	        </tr>
+	        <tr>
+	            <!-- <td><a href='/przedluzPlan'>Przedluz</a></td></tr> -->
+	    </table>
+     </div>
+    </div>
+</nav>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p th:insert="head.html"></p>
+    <body>
+        <div id="wszystko">
+	        <div id="zawartosc">
+	                <h1>Logowanie:</h1>
+	                <p></p>
+	                <form action="#" th:action="@{/zaloguj_uzytkownika}" th:object="${u}" method="post">
+						 <table>
+							<tr>
+								<td class="none">Login: </td>
+								<td class="none"><input type="text" th:field="*{iduzytkownika}" th:required/></td>
+							</tr>
+							<tr>
+								<td class="none">Hasło: </td>
+								<td class="none"><input type="password" th:field="*{haslo}" th:required/></td>
+							</tr>
+						 </table>
+						 <p>A jednak nie masz? <a href="/rejestracja">Rejestracja</a></p>
+						 <p align="center"><input type="submit" value="Zaloguj!"/></p>
+						 
+						 <p><b>Konto admin:</b></p>
+						 <p>Login: admin</p>
+						 <p>Hasło: admin</p>
+						 
+						 <p><b>Konto oko:</b></p>
+						 <p>Login: oko</p>
+						 <p>Hasło: oko</p>
+ 					</form>
+			</div>
+		</div>      
+    </body>
+</html>
